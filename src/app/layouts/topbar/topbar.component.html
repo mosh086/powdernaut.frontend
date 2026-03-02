@@ -1,0 +1,209 @@
+<header class="app-topbar">
+  <div class="page-container topbar-menu">
+    <div class="d-flex align-items-center gap-2">
+
+
+      <app-logo-box />
+
+
+      <button class="sidenav-toggle-button px-2" (click)="toggleMobileMenu()">
+        <i class="ti ti-menu-deep fs-24"></i>
+      </button>
+
+
+      <button (click)="toggleMobileMenu()" class="topnav-toggle-button px-2" data-bs-toggle="collapse"
+        data-bs-target="#topnav-menu-content">
+        <i class="ti ti-menu-deep fs-22"></i>
+      </button>
+
+
+      <div class="topbar-search text-muted d-none d-xl-flex gap-2 align-items-center" data-bs-toggle="modal"
+        data-bs-target="#searchModal" type="button" (click)="open(content)">
+        <i class="ti ti-search fs-18"></i>
+        <span class="me-2">Search something..</span>
+        <span class="ms-auto fw-medium">⌘K</span>
+      </div>
+
+      <!--
+      <div class="topbar-item d-none d-md-flex">
+        <div ngbDropdown>
+          <a ngbDropdownToggle class="topbar-link btn btn-link px-2 drop-arrow-none fw-medium" data-bs-toggle="dropdown"
+            data-bs-trigger="hover" data-bs-offset="0,17" aria-haspopup="false" aria-expanded="false">
+            Pages <i class="ti ti-chevron-down ms-1"></i>
+          </a>
+
+          <div ngbDropdownMenu class="dropdown-menu-xxl p-0">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <div class="p-3">
+                  <h5 class="mb-2 fw-semibold">UI Components</h5>
+                  <ul class="list-unstyled megamenu-list">
+                    <li>
+                      <a routerLink="/extended-ui/dragula">Dragula</a>
+                    </li>
+                    <li>
+                      <a routerLink="/ui/dropdowns">Dropdowns</a>
+                    </li>
+                    <li>
+                      <a routerLink="/extended-ui/ratings">Ratings</a>
+                    </li>
+                    <li>
+                      <a routerLink="/extended-ui/sweet-alert">Sweet Alerts</a>
+                    </li>
+                    <li>
+                      <a routerLink="/extended-ui/scrollbar">Scrollbar</a>
+                    </li>
+                    <li>
+                      <a routerLink="/form/slider">Range Slider</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="p-3">
+                  <h5 class="mb-2 fw-semibold">Applications</h5>
+                  <ul class="list-unstyled megamenu-list">
+                    <li>
+                      <a routerLink="/ecommerce/products">eCommerce Pages</a>
+                    </li>
+                    <li>
+                      <a routerLink="/hospital/doctors">Hospital</a>
+                    </li>
+                    <li>
+                      <a routerLink="/apps/email">Email</a>
+                    </li>
+                    <li>
+                      <a routerLink="/apps/calendar">Calendar</a>
+                    </li>
+                    <li>
+                      <a routerLink="">Kanban Board</a>
+                    </li>
+                    <li>
+                      <a routerLink="/invoice/invoices">Invoice Management</a>
+                    </li>
+                    <li>
+                      <a routerLink="/pages/pricing-one">Pricing</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-4 bg-light bg-opacity-50">
+                <div class="p-3">
+                  <h5 class="mb-2 fw-semibold">Extra Pages</h5>
+                  <ul class="list-unstyled megamenu-list">
+                    <li>
+                      <a routerLink="javascript:void(0);">Left Sidebar with User</a>
+                    </li>
+                    <li>
+                      <a routerLink="javascript:void(0);">Menu Collapsed</a>
+                    </li>
+                    <li>
+                      <a routerLink="javascript:void(0);">Small Left Sidebar</a>
+                    </li>
+                    <li>
+                      <a routerLink="javascript:void(0);">New Header Style</a>
+                    </li>
+                    <li>
+                      <a routerLink="javascript:void(0);">My Account</a>
+                    </li>
+                    <li>
+                      <a routerLink="pages-coming/soon">Maintenance & Coming Soon</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      -->
+      
+    </div>
+
+    <div class="d-flex align-items-center gap-2">
+
+
+      <div class="topbar-item d-flex d-xl-none">
+        <button (click)="open(content)" class="topbar-link" data-bs-toggle="modal" data-bs-target="#searchModal" type="button">
+          <i class="ti ti-search fs-22"></i>
+        </button>
+      </div>
+
+
+      <div class="topbar-item">
+        <div ngbDropdown>
+          <button ngbDropdownToggle class="topbar-link drop-arrow-none" data-bs-toggle="dropdown" data-bs-offset="0,25"
+            type="button" data-bs-auto-close="outside" aria-haspopup="false" aria-expanded="false">
+            <i class="ti ti-bell fs-22"></i> <!--animate-ring -->
+            <span class="noti-icon-badge"></span>
+          </button>
+
+          <div ngbDropdownMenu class="p-0 dropdown-menu-end dropdown-menu-lg" style="min-height: 300px;">
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="topbar-item d-none d-sm-flex">
+        <button class="topbar-link" (click)="settingMenu()" type="button">
+          <i class="ti ti-settings fs-22"></i>
+        </button>
+      </div>
+
+
+      <div class="topbar-item nav-user">
+        <div ngbDropdown>
+          <a ngbDropdownToggle class="topbar-link drop-arrow-none px-2" data-bs-toggle="dropdown" data-bs-offset="0,19"
+            type="button" aria-haspopup="false" aria-expanded="false">
+            <!--<img src="assets/images/users/avatar-1.jpg" width="32" class="rounded-circle me-lg-2 d-flex"
+              alt="user-image">-->
+            <span class="d-lg-flex flex-column gap-1 d-none">
+              <h5 class="my-0">Dhanoo K.</h5>
+            </span>
+            <i class="ti ti-chevron-down d-none d-lg-block align-middle ms-2"></i>
+          </a>
+          <div ngbDropdownMenu class="dropdown-menu-end">
+            <!--
+            <div class="dropdown-header noti-title">
+              <h6 class="text-overflow m-0">Welcome !</h6>
+            </div>
+            -->
+
+            <a href="javascript:void(0);" ngbDropdownItem>
+              <i class="ti ti-user-hexagon me-1 fs-17 align-middle"></i>
+              <span class="align-middle">My Account</span>
+            </a>
+
+            <a href="javascript:void(0);" ngbDropdownItem>
+              <i class="ti ti-settings me-1 fs-17 align-middle"></i>
+              <span class="align-middle">Settings</span>
+            </a>
+
+
+            <div class="dropdown-divider"></div>
+
+
+            <a (click)="logout()" class="cursor-pointer dropdown-item active fw-semibold text-danger">
+              <i class="ti ti-logout me-1 fs-17 align-middle"></i>
+              <span class="align-middle">Sign Out</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<ng-template #content let-modal>
+  <div class="card mb-0 w-100">
+    <div class="px-3 py-2 d-flex flex-row align-items-center" id="top-search">
+      <i class="ti ti-search fs-22"></i>
+      <input type="search" class="form-control border-0" id="search-modal-input"
+        placeholder="Search for actions, people,">
+      <button type="button" class="btn p-0" data-bs-dismiss="modal" aria-label="Close">[esc]</button>
+    </div>
+  </div>
+</ng-template>
