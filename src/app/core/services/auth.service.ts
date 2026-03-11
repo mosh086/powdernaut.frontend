@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators'
 
 import { CookieService } from 'ngx-cookie-service'
 import type { Observable } from 'rxjs'
+import { environment } from '@/app/environments/environment'
 // import type { User } from '@core/helper/fake-backend'
 
 @Injectable({ providedIn: 'root' })
@@ -18,7 +19,7 @@ export class AuthenticationService {
   ) {}
 
   login(email: string, password: string): Observable<any> {
-    return this.http.post<any>(`/api/login`, { email, password }).pipe(
+    return this.http.post<any>(`${environment.apiUrl}/login`, { email, password }).pipe(
       map((user) => {
         if (user && user.token) {
           this.user = user
